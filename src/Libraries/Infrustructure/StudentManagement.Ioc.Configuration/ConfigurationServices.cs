@@ -21,9 +21,10 @@ public static class ConfigurationServices
         options.UseSqlServer(configuration.GetConnectionString("DbConnection")));
         services.AddAutoMapper(typeof(CommonMapper).Assembly);
         services.AddTransient<IStudentRepository,StudentRepository>();
+        services.AddTransient<ITeacherRepository,TeacherRepository>();
 
         services.AddMediatR(options=>options.RegisterServicesFromAssemblies(typeof(ICor).Assembly));
-      //  services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
+      // services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
         //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
     
 

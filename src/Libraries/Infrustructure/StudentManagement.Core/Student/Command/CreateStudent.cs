@@ -21,7 +21,9 @@ public class CreateStudentHandler : IRequestHandler<CreateStudent, VmStudent>
 
     public async Task<VmStudent> Handle(CreateStudent request, CancellationToken cancellationToken)
     {
+
         var data=_mapper.Map<Model.Student>(request.Vmstudent);
+        
         return await _studentRepository.Add(data);
     }
 }

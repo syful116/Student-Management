@@ -10,7 +10,5 @@ public class Student:BaseEntity,IEntity
 
     //[MaxLength(50)]
     public string? CourseName { get; set; }
-
     public int Id { get; set; }
-
 }
